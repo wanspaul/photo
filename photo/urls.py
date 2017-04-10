@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from photo import view
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^upload_photo/', view.UploadPhotoView.as_view(), name='upload_photo')
 ]
